@@ -1,0 +1,211 @@
+<head>
+    <title>主页</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="home.js"></script>
+    <script src="radialindicator.js"></script>
+    <style>
+        .indicatorContainerWrap {
+            position: relative;
+            display: inline-block;
+        }
+
+        .rad-cntnt {
+            position: absolute;
+            display: table;
+            vertical-align: middle;
+            text-align: center;
+            width: 100%;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            transform: translateY(-50%);
+            font-size: 20px;
+            line-height: 24px;
+        }
+
+
+        #prgFileSelector {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #e3f2fd;">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        Dropdown link
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Link 1</a>
+                        <a class="dropdown-item" href="#">Link 2</a>
+                        <a class="dropdown-item" href="#">Link 3</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <form class="navbar-form navbar-right">
+            <div class="input-group">
+                <input type="text" class="form-control">
+                <span class="input-group-btn">
+                    <button class="btn btn-info" type="button">
+                        Search
+                    </button>
+                </span>
+            </div>
+        </form>
+    </nav>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4" style="background-color:lavender;">
+                <img class="rounded-circle" src="/static/img/sign_in_bg.jpg" width="140" height="140">
+                <h1 id="home_a">home_a</h1>
+            </div>
+            <div class="col-sm-8" style="background-color:lavenderblush;">
+
+                <div class="card-deck-wrapper">
+                    <div class="card-deck">
+                        <div class="card">
+                            <div class="card-block">
+                                <div class="indicatorContainerWrap" style="float: left;">
+                                    <div class="rad-prg" id="indicatorContainer1"></div>
+                                    <div class="rad-cntnt">
+                                        完成度
+                                        <br> 0%
+                                    </div>
+                                </div>
+                                <h3 class="card-title" style="position: relative; top: 20">四级单词</h3>
+                                <p class="card-text" style="position: relative; top: 20">2500词
+                                    <br>0人在背</p>
+                                <p style="position: relative; top: 20">
+                                    <button id="home_btn_1" class="btn btn-primary"></button>
+                                    <button id="home_set_btn_1" class="btn btn-primary">设置</button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-block">
+                                <div class="indicatorContainerWrap" style="float: left;">
+                                    <div class="rad-prg" id="indicatorContainer2"></div>
+                                    <div class="rad-cntnt">
+                                        完成度
+                                        <br> 0%
+                                    </div>
+                                </div>
+                                <h3 class="card-title" style="position: relative; top: 20">六级单词</h3>
+                                <p class="card-text" style="position: relative; top: 20">3000词
+                                    <br>0人在背</p>
+                                <p style="position: relative; top: 20">
+                                    <button id="home_btn_2" class="btn btn-primary"></button>
+                                    <button id="home_set_btn_2" class="btn btn-primary">设置</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+                <div class="card-deck-wrapper">
+                    <div class="card-deck">
+                        <div class="card">
+                            <div class="card-block">
+                                <div class="indicatorContainerWrap" style="float: left;">
+                                    <div class="rad-prg" id="indicatorContainer3"></div>
+                                    <div class="rad-cntnt">
+                                        完成度
+                                        <br> 0%
+                                    </div>
+                                </div>
+                                <h3 class="card-title" style="position: relative; top: 20">托福单词</h3>
+                                <p class="card-text" style="position: relative; top: 20">3500词
+                                    <br>0人在背</p>
+                                <p style="position: relative; top: 20">
+                                    <button id="home_btn_3" class="btn btn-primary"></button>
+                                    <button id="home_set_btn_3" class="btn btn-primary">设置</button>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-block">
+                                <div class="indicatorContainerWrap" style="float: left;">
+                                    <div class="rad-prg" id="indicatorContainer4"></div>
+                                    <div class="rad-cntnt">
+                                        完成度
+                                        <br> 0%
+                                    </div>
+                                </div>
+                                <h3 class="card-title" style="position: relative; top: 20">雅思单词</h3>
+                                <p class="card-text" style="position: relative; top: 20">3500词
+                                    <br>0人在背</p>
+                                <p style="position: relative; top: 20">
+                                    <button id="home_btn_4" class="btn btn-primary"></button>
+                                    <button id="home_set_btn_4" class="btn btn-primary">设置</button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        四级单词:
+        <button id="home_btn_1" class="btn btn-primary"></button>
+        学习量
+        <input type="text" id='home_learn_1'></input>
+        <button id="home_btn_learn_1">更改</button>
+
+        六级单词:
+        <button id="home_btn_2" class="btn btn-primary"></button>
+        学习量
+        <input type="text" id='home_learn_2'></input>
+        <button id="home_btn_learn_2">更改</button>
+
+        托福单词:
+        <button id="home_btn_3" class="btn btn-primary"></button>
+        学习量
+        <input type="text" id='home_learn_3'></input>
+        <button id="home_btn_learn_3">更改</button>
+
+        雅思单词:
+        <button id="home_btn_4" class="btn btn-primary"></button>
+        学习量
+        <input type="text" id='home_learn_4'></input>
+        <button id="home_btn_learn_4">更改</button>
+
+        六级单词:
+        <button id="home_btn_2"></button>
+        托福单词:
+        <button id="home_btn_3"></button>
+        雅思单词:
+        <button id="home_btn_4"></button>
+    </div>
+
+</body>

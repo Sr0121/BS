@@ -1,0 +1,93 @@
+<head>
+    <title>注册</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="sign_up.js"></script>
+    <style>
+        body {
+            background-image: url(/static/img/sign_in_bg.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            background-attachment: fixed;
+        }
+
+        .center-vertical {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%)
+        }
+
+        .input_border {
+            border-style: solid;
+            width: 250px;
+            border-top-width: 0px;
+            border-right-width: 0px;
+            border-bottom-width: 1px;
+            border-left-width: 0px;
+            border-radius: 0px;
+        }
+
+        .change::-webkit-input-placeholder {
+            color: red;
+        }
+
+        .change::-moz-placeholder {
+            color: red;
+        }
+
+        .change::-ms-input-placeholder {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center-vertical" style="width: 450px">
+        <div class="card" align="center">
+            <div class="card-body">
+                <h1 class="text-primary display-2">易背</h1>
+                <br>
+                <h3 class="text-secondary">
+                    <small>注册易背，轻松背单词</small>
+                </h3>
+                <br>
+                <form id="a">
+                    <input type="text" class="form-control input_border" placeholder="请输入用户名" maxlength="12" name="id"></input>
+                    <br>
+                    <input type="password" class="form-control input_border" placeholder="请输入密码" maxlength="16" name="password"></input>
+                    <br>
+                    <input type="text" class="form-control input_border" placeholder="请输入邮箱" name="email"></input>
+                </form>
+                <br>
+                <button id="c" class="btn btn-primary">注册</button>
+            </div>
+            <div class="card-footer">
+                已有账号？
+                <a id="b" class="text-primary">登录</a>
+            </div>
+        </div>
+    </div>
+    <p></p>
+
+    <!-- 模态框 -->
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    请前往邮箱查看验证邮件。
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="d">返回登录</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <p></p>
+</body>
