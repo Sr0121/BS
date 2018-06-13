@@ -10,13 +10,6 @@ var quest_html = async (ctx, next) => {
     await next();
 }
 
-var quest_js = async (ctx, next) => {
-    ctx.response.type = 'text/javascript';
-    ctx.response.status = 200;
-    ctx.response.body = fs.readFileSync(path.resolve(__dirname, "..") + '/views/quest.js');
-    await next();
-}
-
 var quest_dic = async (ctx, next) => {
     var database = require('./load_database.js')();
     var id = ctx.cookies.get('uid');
@@ -229,7 +222,6 @@ var quest_ans = async (ctx, next) => {
 
 module.exports = {
     'GET /quest': quest_html,
-    'GET /quest.js': quest_js,
     'POST /quest/dic': quest_dic,
     'POST /quest/ans': quest_ans
 };

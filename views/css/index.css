@@ -1,0 +1,24 @@
+
+body {
+    background-image: url(/img/sign_in_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position:left top;
+}
+
+.center-vertical {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.input_border {
+    border-style: solid;
+    width: 250px;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 1px;
+    border-left-width: 0px;
+    border-radius: 0px;
+}

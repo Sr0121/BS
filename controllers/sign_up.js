@@ -18,13 +18,6 @@ var sign_up_html = async (ctx, next) => {
     await next();
 }
 
-var sign_up_js = async (ctx, next) => {
-    ctx.response.type = 'text/javascript';
-    ctx.response.status = 200;
-    ctx.response.body = fs.readFileSync(path.resolve(__dirname, "..") + '/views/sign_up.js');
-    await next();
-}
-
 var sign_up_post = async (ctx, next) => {
     var database = require('./load_database.js')();
     var id = ctx.request.body.id || "";
@@ -118,7 +111,6 @@ var sign_up_verify = async (ctx, next) => {
 
 module.exports = {
     'GET /sign_up': sign_up_html,
-    'GET /sign_up.js': sign_up_js,
     'GET /sign_up/ve': sign_up_verify,
     'POST /sign_up/si': sign_up_post
 };

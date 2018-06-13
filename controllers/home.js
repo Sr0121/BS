@@ -10,13 +10,6 @@ var home_html = async (ctx, next) => {
     await next();
 }
 
-var home_js = async (ctx, next) => {
-    ctx.response.type = 'text/javascript';
-    ctx.response.status = 200;
-    ctx.response.body = fs.readFileSync(path.resolve(__dirname, "..") + '/views/home.js');
-    await next();
-}
-
 var home_info = async (ctx, next) => {
     var id = ctx.cookies.get('uid');
     var map = new Map();
@@ -70,7 +63,6 @@ var home_change = async (ctx, next) => {
 
 module.exports = {
     'GET /home': home_html,
-    'GET /home.js': home_js,
     'GET /home/info': home_info,
     'POST /home/change': home_change
 };
