@@ -19,3 +19,22 @@
     font-size: 20px;
     line-height: 24px;
 }
+
+.center-vertical {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.change::-webkit-input-placeholder {
+    color: red;
+}
+
+.change::-moz-placeholder {
+    color: red;
+}
+
+.change::-ms-input-placeholder {
+    color: red;
+}

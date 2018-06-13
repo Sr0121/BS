@@ -22,3 +22,15 @@ body {
     border-left-width: 0px;
     border-radius: 0px;
 }
+
+.change::-webkit-input-placeholder {
+    color: red;
+}
+
+.change::-moz-placeholder {
+    color: red;
+}
+
+.change::-ms-input-placeholder {
+    color: red;
+}

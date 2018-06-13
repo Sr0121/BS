@@ -38,17 +38,17 @@
                 </li>
             </ul>
         </div>
+        <img class="rounded-circle" src="/img/sign_in_bg.jpg" width="30" height="30">
+        <div id="home_a" class="navbar-brand">home_a</div>
 
     </nav>
-    <br>
+    <br><br><br><br>
 
     <div class="container">
         <div class="row">
-            <div class="col-sm-4" style="background-color:lavender;">
-                <img class="rounded-circle" src="/static/img/sign_in_bg.jpg" width="140" height="140">
-                <h1 id="home_a">home_a</h1>
+            <div class="col-md-2">
             </div>
-            <div class="col-sm-8" style="background-color:lavenderblush;">
+            <div class="col-md-8">
 
                 <div class="card-deck-wrapper">
                     <div class="card-deck">
@@ -66,7 +66,9 @@
                                     <br>0人在背</p>
                                 <p style="position: relative; top: 20px">
                                     <button id="home_btn_1" class="btn btn-primary"></button>
-                                    <button id="home_set_btn_1" class="btn btn-primary">设置</button>
+                                    <button id="home_set_btn_1" class="btn btn-primary" data-toggle="modal" data-target="#setNum">
+                                        设置
+                                    </button>
                                 </p>
                             </div>
                         </div>
@@ -84,7 +86,9 @@
                                     <br>0人在背</p>
                                 <p style="position: relative; top: 20px">
                                     <button id="home_btn_2" class="btn btn-primary"></button>
-                                    <button id="home_set_btn_2" class="btn btn-primary">设置</button>
+                                    <button id="home_set_btn_2" class="btn btn-primary" data-toggle="modal" data-target="#setNum">
+                                        设置
+                                    </button>
                                 </p>
                             </div>
                         </div>
@@ -108,7 +112,9 @@
                                     <br>0人在背</p>
                                 <p style="position: relative; top: 20px">
                                     <button id="home_btn_3" class="btn btn-primary"></button>
-                                    <button id="home_set_btn_3" class="btn btn-primary">设置</button>
+                                    <button id="home_set_btn_3" class="btn btn-primary" data-toggle="modal" data-target="#setNum">
+                                        设置
+                                    </button>
                                 </p>
                             </div>
                         </div>
@@ -126,7 +132,9 @@
                                     <br>0人在背</p>
                                 <p style="position: relative; top: 20px">
                                     <button id="home_btn_4" class="btn btn-primary"></button>
-                                    <button id="home_set_btn_4" class="btn btn-primary">设置</button>
+                                    <button id="home_set_btn_4" class="btn btn-primary" data-toggle="modal" data-target="#setNum">
+                                        设置
+                                    </button>
                                 </p>
                             </div>
                         </div>
@@ -134,36 +142,40 @@
                 </div>
             </div>
         </div>
-        四级单词:
-        <button id="home_btn_1" class="btn btn-primary"></button>
-        学习量
-        <input type="text" id='home_learn_1'></input>
-        <button id="home_btn_learn_1">更改</button>
+        </div>
 
-        六级单词:
-        <button id="home_btn_2" class="btn btn-primary"></button>
-        学习量
-        <input type="text" id='home_learn_2'></input>
-        <button id="home_btn_learn_2">更改</button>
-
-        托福单词:
-        <button id="home_btn_3" class="btn btn-primary"></button>
-        学习量
-        <input type="text" id='home_learn_3'></input>
-        <button id="home_btn_learn_3">更改</button>
-
-        雅思单词:
-        <button id="home_btn_4" class="btn btn-primary"></button>
-        学习量
-        <input type="text" id='home_learn_4'></input>
-        <button id="home_btn_learn_4">更改</button>
-
-        六级单词:
-        <button id="home_btn_2"></button>
-        托福单词:
-        <button id="home_btn_3"></button>
-        雅思单词:
-        <button id="home_btn_4"></button>
     </div>
 
+
+    <div class="modal fade" id="setNum" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        修改任务量
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    每天新学习<input type="text" id='home_learn'></input>个词。
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        关闭
+                    </button>
+                    <button id='home_btn_learn_1' class="btn btn-primary" data-dismiss="modal">
+                        确认
+                    </button>
+                    <button id='home_btn_learn_2' class="btn btn-primary" data-dismiss="modal">
+                        确认
+                    </button>
+                    <button id='home_btn_learn_3' class="btn btn-primary" data-dismiss="modal">
+                        确认
+                    </button>
+                    <button id='home_btn_learn_4' class="btn btn-primary" data-dismiss="modal">
+                        确认
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>

@@ -5,9 +5,9 @@ $(document).ready(function () {
         $("input[name='password']").attr("placeholder", "请输入密码");
         $("input[name='password']").attr("class", "form-control input_border");
 
-        var id = $("input[name='id']").val()
-        var passwd = $("input[name='password']").val()
-        var valid_id_pwd = /^[a-zA-Z0-9_]{6,16}$/
+        var id = $("input[name='id']").val();
+        var passwd = $("input[name='password']").val();
+        var valid_id_pwd = /^[a-zA-Z0-9_]{6,16}$/;
 
         var flag = 0;
         // alert("Value: " + len);

@@ -12,12 +12,14 @@ var get_new_word = function () {
                 $('#quest_btn_1').html(data.answer_1);
                 $('#quest_btn_2').html(data.answer_2);
                 $('#quest_btn_3').html(data.answer_3);
-                $('#quest_btn_0').attr("style", "");
-                $('#quest_btn_1').attr("style", "");
-                $('#quest_btn_2').attr("style", "");
-                $('#quest_btn_3').attr("style", "");
-                $("#record").text(data.done + "/" + data.total);
-                $("#record2").text(data.review_done + "/" + data.review_total);
+                $('#quest_btn_0').attr("style", "cursor: pointer;");
+                $('#quest_btn_1').attr("style", "cursor: pointer;");
+                $('#quest_btn_2').attr("style", "cursor: pointer;");
+                $('#quest_btn_3').attr("style", "cursor: pointer;");
+                $("#record_remain").text(data.done);
+                $("#record_learned").text(data.total);
+                $("#record_not_reviewed").text(data.review_done);
+                $("#record_reviewed").text(data.review_total);
             }
             current_word = data;
         }
@@ -26,13 +28,15 @@ var get_new_word = function () {
 
 var judge = function (index, data) {
     if (data.state === "SUCCESS") {
-        $("#quest_btn_" + index).attr("style", "background:green");
-        $("#record").text(data.done + "/" + data.total);
-        $("#record2").text(data.review_done + "/" + data.review_total);
+        $("#quest_btn_" + index).attr("style", "cursor: pointer; color:green;");
+        $("#record_remain").text(data.done);
+        $("#record_learned").text(data.total);
+        $("#record_not_reviewed").text(data.review_done);
+        $("#record_reviewed").text(data.review_total);
     }
     else {
-        $("#quest_btn_" + index).attr("style", "background:red");
-        $("#quest_btn_" + current_word.right).attr("style", "background:green");
+        $("#quest_btn_" + index).attr("style", "cursor: pointer; color:red;");
+        $("#quest_btn_" + current_word.right).attr("style", "cursor: pointer; color:green;");
     }
     current_word = data;
     setTimeout(function () {
