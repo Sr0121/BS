@@ -77,27 +77,30 @@ var sign_up_verify = async (ctx, next) => {
         req = 'insert into user_table values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
         row = await database.query(req, [id, password, email, 0, 0, 0, 0, 2500, 0, 0, 0, 2500, 0, 3000, 0, 0, 0, 3000, 0, 3500, 0, 0, 0, 3500, 0, 3500, 0, 0, 0, 3500, 0]);
 
-        req = 'delete from verify_table where id = ?'
+        req = 'delete from verify_table where id = ?';
         row = await database.query(req, [id]);
 
-        req = 'create table ' + id + '_IELTS (id int(6), correct int(6), total int(6), rate float, date double, islearn int(6));'
+        req = 'create table ' + id + '_IELTS (id int(6), correct int(6), total int(6), rate float, date double, islearn int(6));';
         row = await database.query(req);
         req = 'insert into ' + id + '_IELTS select * from ori_IELTS;'
         row = await database.query(req);
 
-        req = 'create table ' + id + '_level_4 (id int(6), correct int(6), total int(6), rate float, date double, islearn int(6));'
+        req = 'create table ' + id + '_level_4 (id int(6), correct int(6), total int(6), rate float, date double, islearn int(6));';
         row = await database.query(req);
         req = 'insert into ' + id + '_level_4 select * from ori_level_4;'
         row = await database.query(req);
 
-        req = 'create table ' + id + '_level_6 (id int(6), correct int(6), total int(6), rate float, date double, islearn int(6));'
+        req = 'create table ' + id + '_level_6 (id int(6), correct int(6), total int(6), rate float, date double, islearn int(6));';
         row = await database.query(req);
         req = 'insert into ' + id + '_level_6 select * from ori_level_6;'
         row = await database.query(req);
 
-        req = 'create table ' + id + '_toefl (id int(6), correct int(6), total int(6), rate float, date double, islearn int(6));'
+        req = 'create table ' + id + '_toefl (id int(6), correct int(6), total int(6), rate float, date double, islearn int(6));';
         row = await database.query(req);
         req = 'insert into ' + id + '_toefl select * from ori_toefl;'
+        row = await database.query(req);
+
+        req = 'create table ' + id + '_user_dic( `Word` varchar(30) NOT NULL, `lx` longtext, PRIMARY KEY(Word));';
         row = await database.query(req);
 
         //注册后无法直接进入主页面 并且无法登录

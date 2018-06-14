@@ -1,3 +1,5 @@
+
+
 var current_word = new Map();
 
 var get_new_word = function () {
@@ -18,8 +20,8 @@ var get_new_word = function () {
                 $('#quest_btn_3').attr("style", "cursor: pointer;");
                 $("#record_remain").text(data.done);
                 $("#record_learned").text(data.total);
-                $("#record_not_reviewed").text(data.review_done);
-                $("#record_reviewed").text(data.review_total);
+                $("#record_not_reviewed").text(data.review_total);
+                $("#record_reviewed").text(data.review_done);
             }
             current_word = data;
         }
@@ -31,8 +33,8 @@ var judge = function (index, data) {
         $("#quest_btn_" + index).attr("style", "cursor: pointer; color:green;");
         $("#record_remain").text(data.done);
         $("#record_learned").text(data.total);
-        $("#record_not_reviewed").text(data.review_done);
-        $("#record_reviewed").text(data.review_total);
+        $("#record_not_reviewed").text(data.review_total);
+        $("#record_reviewed").text(data.review_done);
     }
     else {
         $("#quest_btn_" + index).attr("style", "cursor: pointer; color:red;");

@@ -54,7 +54,9 @@ var home_change = async (ctx, next) => {
 
 
 
-    req = 'UPDATE user_table SET ' + ctx.request.body.type + '=' + ctx.request.body.num + ' , ' + ctx.request.body.type + '_review_target = ' + Math.floor(ctx.request.body.num * 1.5) + ' WHERE id=' + ctx.cookies.get('uid') + ';';
+    req = 'UPDATE user_table SET ' + ctx.request.body.type + '=' + ctx.request.body.num + ' , '
+        + ctx.request.body.type + '_review_target = ' + Math.floor(ctx.request.body.num * 1.5)
+        + ' WHERE id=' + ctx.cookies.get('uid') + ';';
     console.log(req);
     row = await database.query(req);
 

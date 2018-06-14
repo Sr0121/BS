@@ -47,3 +47,9 @@ CREATE TABLE ori_L4 (
     `correct` int(6),
     `total` int(6)
 );
+
+CREATE TABLE user_dic(
+    `Word` varchar(30) NOT NULL,
+    `lx` longtext,
+    PRIMARY KEY(Word)
+);

@@ -26,7 +26,7 @@ var sign_in_post = async (ctx, next) => {
         map['state'] = 'SUCCESS';
     }
 
-    var timestamp = new Date().getTime() + 1000 * 60 * 10;
+    var timestamp = new Date().getTime() + 1000 * 10 * 60;
 
     ctx.cookies.set('uid', row[0]['id'], { expires: new Date(timestamp) });
 
