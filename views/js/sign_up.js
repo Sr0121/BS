@@ -30,7 +30,7 @@ $(document).ready(function () {
         if (passwd.length < 6) {
             $("input[name='password']").val("");
             $("input[name='password']").attr("class", "form-control input_border change");
-            $("input[name='password']").attr("placeholder", "用户名不得小于6位");
+            $("input[name='password']").attr("placeholder", "密码不得小于6位");
             flag = 1;
         }
 

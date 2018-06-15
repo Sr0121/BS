@@ -1,0 +1,106 @@
+<script type="text/javascript" src="/js/head.js"></script>
+<nav class="navbar navbar-expand-sm navbar-light" style="background-color: #e3f2fd;">
+    <div class="container">
+        <a class="navbar-brand text-primary" href="#">易背</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/home">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/wordbook">我的词库</a>
+                </li>
+            </ul>
+
+        </div>
+        <ul class="nav navbar-nav pull-right">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="home_a" data-toggle="dropdown">
+
+                </a>
+                <div class="dropdown-menu">
+                    <a id="head_set" class="dropdown-item"  data-toggle="modal" data-target="#head_set_model" style="cursor: pointer">设置</a>
+                    <a id="head_quit" class="dropdown-item" href="/sign_in">退出</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="modal fade" id="head_set_model" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    个人信息
+                </h4>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <div class="modal-body text-center">
+                            <img id="head_img" src="/icon/default_img.jpeg" style="width: 150px;height: 150px; border-radius: 50%;">
+
+                            <form action="/upload" method="post" enctype="multipart/form-data" role="form">
+                                <div class="form-group">
+                                <input type="file" name="file" style="display: none;" accept="image/*">
+                                <input type="submit" name="submit" value="提交" style="display: none;position: relative; top:10px;" class="btn btn-primary">
+                                </div>
+                            </form>
+
+                            <h3 id="head_name" style="cursor: pointer; position: relative; top:10px;"></h3>
+
+                            <form id="head_user_name_form" style="display: none;" >
+                                <br>
+                                <input class="form-control input_border" placeholder="请输入用户名" maxlength="16" name="user_name">
+                                <br>
+                                <button type="button" class="btn btn-primary" id="head_user_name_submit">
+                                    更改
+                                </button>
+                            </form>
+
+                            <div id="head_modify_password" style="cursor: pointer;position: relative; top:10px;">修改密码</div>
+
+                            <form id="head_password_form" style="display: none;" >
+                                <br>
+                                <input type="password" class="form-control input_border" placeholder="请输入密码" maxlength="16" name="password">
+                                <br>
+                                <input type="password" class="form-control input_border" placeholder="请再次输入密码" maxlength="16" name="password_confirm">
+                                <br>
+                                <button type="button" class="btn btn-primary" id="head_passwd_submit">
+                                    更改
+                                </button>
+                            </form>
+                            <div id="head_modify_success" style="color: gray; display: none">
+                                修改成功
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    关闭
+                </button>
+                <!--<button id='home_btn_learn_1' class="btn btn-primary" data-dismiss="modal">-->
+                    <!--确认-->
+                <!--</button>-->
+                <!--<button id='home_btn_learn_2' class="btn btn-primary" data-dismiss="modal">-->
+                    <!--确认-->
+                <!--</button>-->
+                <!--<button id='home_btn_learn_3' class="btn btn-primary" data-dismiss="modal">-->
+                    <!--确认-->
+                <!--</button>-->
+                <!--<button id='home_btn_learn_4' class="btn btn-primary" data-dismiss="modal">-->
+                    <!--确认-->
+                <!--</button>-->
+            </div>
+        </div>
+    </div>
+</div>

@@ -11,6 +11,8 @@ CREATE TABLE user_table (
     `id` VARCHAR(16) NOT NULL,
     `password` VARCHAR(16) NOT NULL,
     `email` VARCHAR(32) NOT NULL,
+    `user_name` VARCHAR(32) NOT NULL,
+    `user_icon` VARCHAR(32) NOT NULL,
     `level_4` INT(6),
     `level_6` INT(6),
     `toefl` INT(6),

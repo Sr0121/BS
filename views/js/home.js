@@ -1,37 +1,6 @@
 
-$(document).ready(function(){
-    $.ajax({url:'/home/info' , type:'get', success:function(data){
-        if(data.state === "SUCCESS"){
-            $('#home_a').text(data.id);
-            if(data.level_4 === 0){
-                $('#home_btn_1').text('开始学习');
-            }
-            else{
-                $('#home_btn_1').text('继续学习');
-            }
-            if(data.level_6 === 0){
-                $('#home_btn_2').text('开始学习');
-            }
-            else{
-                $('#home_btn_2').text('继续学习');
-            }
-            if(data.toefl === 0){
-                $('#home_btn_3').text('开始学习');
-            }
-            else{
-                $('#home_btn_3').text('继续学习');
-            }
-            if(data.IELTS === 0){
-                $('#home_btn_4').text('开始学习');
-            }
-            else{
-                $('#home_btn_4').text('继续学习');
-            }
-        }
-        else{
-            $(location).attr('href', './sign_in');
-        }
-    }});
+$(document).ready(function () {
+    $("#head").load('./head.html');
 });
 
 $(document).ready(function(){

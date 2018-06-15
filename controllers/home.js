@@ -8,7 +8,7 @@ var home_html = async (ctx, next) => {
     ctx.response.status = 200;
     ctx.response.body = fs.readFileSync(path.resolve(__dirname, '..') + '/views/home.html');
     await next();
-}
+};
 
 var home_info = async (ctx, next) => {
     var id = ctx.cookies.get('uid');
@@ -23,6 +23,8 @@ var home_info = async (ctx, next) => {
     else {
         map['state'] = 'SUCCESS';
         map['id'] = row[0]['id'];
+        map['user_name'] = row[0]['user_name'];
+        map['user_icon'] = row[0]['user_icon'];
         map['password'] = row[0]['password'];
         map['email'] = row[0]['email'];
         map['level_4'] = row[0]['level_4'];
@@ -35,7 +37,7 @@ var home_info = async (ctx, next) => {
     ctx.response.body = JSON.stringify(map);
 
     await next();
-}
+};
 
 var home_change = async (ctx, next) => {
     var database = require('./load_database.js')();
@@ -61,7 +63,7 @@ var home_change = async (ctx, next) => {
     row = await database.query(req);
 
     await next();
-}
+};
 
 module.exports = {
     'GET /home': home_html,

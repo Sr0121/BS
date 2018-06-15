@@ -1,4 +1,7 @@
 
+$(document).ready(function () {
+    $("#head").load('./head.html');
+})
 
 var current_word = new Map();
 

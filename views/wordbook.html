@@ -11,130 +11,99 @@
 </head>
 
 <body>
-<nav class="navbar navbar-expand-sm navbar-light" style="background-color: #e3f2fd;">
+    <div id="head"></div>
+    <br><br><br><br>
+
     <div class="container">
-        <a class="navbar-brand text-primary" href="#">易背</a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <ul class="nav navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/home">首页</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/wordbook">我的词库</a>
-                </li>
-            </ul>
-
-        </div>
-        <ul class="nav navbar-nav pull-right">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="home_a" data-toggle="dropdown">
-
-                </a>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">设置</a>
-                    <a class="dropdown-item" href="#">退出</a>
-                </div>
-            </li>
-        </ul>
-    </div>
-</nav>
-<br><br><br><br>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-3">
-        </div>
-        <div class="col-md-6 text-center">
-            <div class="card" style="height: 70%">
-                <div class="row">
-                    <div class="col-md-3">
-                    </div>
-                    <div class="col-md-6 text-center">
-                        <h4 class="card-body">
-                            我的单词本
-                        </h4>
-                    </div>
-                    <div class="col-md-3 text-right">
-                        <h4 id="word_add_button" class="card-body" style="color: gray"  data-toggle="modal" data-target="#word_add">
-                            <span style="cursor: pointer"> + </span>
-                        </h4>
-                    </div>
-
-                </div>
-                <div class="row">
-                    <div class="col-md-1">
-                    </div>
-                    <div class="col-md-10 text-center">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <tbody id="show_table">
-                                    <tr>
-
-                                    </tr>
-                                </tbody>
-                            </table>
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6 text-center">
+                <div class="card" style="height: 70%">
+                    <div class="row">
+                        <div class="col-md-3">
                         </div>
+                        <div class="col-md-6 text-center">
+                            <h4 class="card-body">
+                                我的单词本
+                            </h4>
+                        </div>
+                        <div class="col-md-3 text-right">
+                            <h4 id="word_add_button" class="card-body" style="color: gray"  data-toggle="modal" data-target="#word_add">
+                                <span style="cursor: pointer"> + </span>
+                            </h4>
+                        </div>
+
                     </div>
-            </div>
-        </div>
-    </div>
-</div>
+                    <div class="row">
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-10 text-center">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody id="show_table">
+                                        <tr>
 
-<div class="modal fade" id="word_add" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">
-                    添加新的词
-                </h4>
-            </div>
-            <div class="modal-body">
-                <form id="a">
-                    请输入单词：<input type="text" name='word_add_word'><br><br>
-                    请输入释义：<input type="text" name='word_add_translation'>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">
-                    关闭
-                </button>
-                <button id='word_add_confirm' class="btn btn-primary">
-                    确认
-                </button>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="modal fade" id="word_set_model" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">
-                    修改单词释义
-                </h4>
-            </div>
-            <div class="modal-body">
-                <form id="b">
-                    修改释义：<input type="text" name='word_set_translation'>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">
-                    关闭
-                </button>
-                <button id='word_set_confirm' class="btn btn-primary">
-                    确认
-                </button>
+    <div class="modal fade" id="word_add" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        添加新的词
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <form id="a">
+                        请输入单词：<input type="text" name='word_add_word'><br><br>
+                        请输入释义：<input type="text" name='word_add_translation'>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        关闭
+                    </button>
+                    <button id='word_add_confirm' class="btn btn-primary">
+                        确认
+                    </button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+    <div class="modal fade" id="word_set_model" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">
+                        修改单词释义
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <form id="b">
+                        修改释义：<input type="text" name='word_set_translation'>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        关闭
+                    </button>
+                    <button id='word_set_confirm' class="btn btn-primary">
+                        确认
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 </body>

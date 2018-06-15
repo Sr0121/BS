@@ -1,5 +1,5 @@
 {
-    "name": "hello-koa2",
+    "name": "koa-website",
     "version": "1.0.0",
     "description": "B/S final project",
     "main": "app.js",
@@ -14,7 +14,7 @@
     "license": "Apache-2.0",
     "repository": {
         "type": "git",
-        "url": "https://github.com/michaelliao/learn-javascript.git"
+        "url": "https://github.com/Sr0121/BS"
     },
     "dependencies": {
         "koa": "2.0.0",
@@ -22,8 +22,9 @@
         "koa-router": "7.0.0",
         "koa-static": "^4.0.3",
         "mysql": "2.11.1",
-        "co-mysql" : "1.0.0",
+        "co-mysql" :"^1.0.0",
         "nodemailer": "^2.3.2",
-        "nodemailer-smtp-transport": "^2.4.2"
+        "nodemailer-smtp-transport": "^2.4.2",
+        "koa-multer":"^1.0.2"
     }
 }

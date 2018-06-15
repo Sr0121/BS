@@ -1,5 +1,7 @@
-$(document).ready(function(){
-});
+
+$(document).ready(function () {
+    $("#head").load('./head.html');
+})
 
 $(document).ready(function () {
     $('#word_add_confirm').click(function () {

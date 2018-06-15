@@ -74,8 +74,8 @@ var sign_up_verify = async (ctx, next) => {
         var password = row[0]['password'];
         var email = row[0]['email'];
 
-        req = 'insert into user_table values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
-        row = await database.query(req, [id, password, email, 0, 0, 0, 0, 2500, 0, 0, 0, 2500, 0, 3000, 0, 0, 0, 3000, 0, 3500, 0, 0, 0, 3500, 0, 3500, 0, 0, 0, 3500, 0]);
+        req = 'insert into user_table values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+        row = await database.query(req, [id, password, email, id, 'default_img.jpeg', 0, 0, 0, 0, 2500, 0, 0, 0, 2500, 0, 3000, 0, 0, 0, 3000, 0, 3500, 0, 0, 0, 3500, 0, 3500, 0, 0, 0, 3500, 0]);
 
         req = 'delete from verify_table where id = ?';
         row = await database.query(req, [id]);

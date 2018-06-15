@@ -1,4 +1,5 @@
 const fs = require('fs');
+const multer=require('koa-multer');
 
 // add url-route in /controllers:
 
@@ -34,7 +35,22 @@ function addControllers(router, dir) {
         let mapping = require(__dirname + '/' + dir + '/' + f);
         addMapping(router, mapping);
     });
+
+    var storage = multer.diskStorage({
+        destination: function (req, file, cb) {
+            cb(null, __dirname + '/static/icon')
+        },
+        filename: function (req, file, cb) {
+            var fileFormat = (file.originalname).split(".");  //以点分割成数组，数组的最后一项就是后缀名
+            cb(null,Date.now() + "." + fileFormat[fileFormat.length - 1]);
+        }
+    })
+
+    var upload = multer({ storage: storage });
+
+    router.post('/upload',upload.single('file'), require(__dirname+'/controllers/head.js')['MODIFY']);
 }
+
 
 module.exports = function (dir) {
     let controllers_dir = dir || 'controllers',
