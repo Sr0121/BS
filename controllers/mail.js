@@ -11,7 +11,7 @@ var transporter = nodemailer.createTransport({
 var sendMail = function (recipient, subject, plain, html) {
 
     var mailOptions = {
-        from: '18867138461@163.com',
+        from: 'xxx@163.com',
         to: recipient,
         subject: subject,
         text: plain,
