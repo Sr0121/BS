@@ -3,8 +3,8 @@ var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport({
     service: '163',
     auth: {
-        user: '18867138461@163.com',
-        pass: 'jinhuarr1997121'
+        user: 'xxx@163.com',
+        pass: 'yyy'
     }
 });
 
