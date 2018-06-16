@@ -1,4 +1,5 @@
 <script type="text/javascript" src="/js/head.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/home.css" charset="utf-8"/>
 <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #e3f2fd;">
     <div class="container">
         <a class="navbar-brand text-primary" href="#">易背</a>
@@ -19,6 +20,7 @@
 
         </div>
         <ul class="nav navbar-nav pull-right">
+            <img id="head_img_show" src="/icon/default_img.jpeg" style="width: 40px;height: 40px; border-radius: 50%; cursor: pointer">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="home_a" data-toggle="dropdown">
 
@@ -45,8 +47,9 @@
                     <div class="col-md-2"></div>
                     <div class="col-md-8">
                         <div class="modal-body text-center">
-                            <img id="head_img" src="/icon/default_img.jpeg" style="width: 150px;height: 150px; border-radius: 50%;">
-
+                            <div class="hover-img">
+                                <img id="head_img" src="/icon/default_img.jpeg" style="width: 150px;height: 150px; border-radius: 50%; cursor: pointer">
+                            </div>
                             <form action="/upload" method="post" enctype="multipart/form-data" role="form">
                                 <div class="form-group">
                                 <input type="file" name="file" style="display: none;" accept="image/*">

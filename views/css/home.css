@@ -27,6 +27,12 @@
     transform: translate(-50%, -50%)
 }
 
+.hover-img img:hover {
+    filter:alpha(Opacity=50);
+    -moz-opacity:0.5;
+    opacity: 0.5;
+}
+
 .change::-webkit-input-placeholder {
     color: red;
 }

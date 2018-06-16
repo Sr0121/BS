@@ -1,10 +1,13 @@
+var icon_src;
 
 $(document).ready(function(){
     $.ajax({url:'/home/info' , type:'get', success:function(data){
             if(data.state === "SUCCESS"){
                 $("#home_a").text(data.user_name);
                 $("#head_name").text(data.user_name);
-                $("#head_img").attr('src', '/icon/'+data.user_icon);
+                icon_src = '/icon/'+data.user_icon;
+                $("#head_img").attr('src', icon_src);
+                $("#head_img_show").attr('src', icon_src);
             }
             else{
                 $(location).attr('href', './sign_in');
@@ -19,18 +22,25 @@ $(document).ready(function () {
         $("input[name='password']").attr("placeholder", "请输入密码");
         $("input[name='password_confirm']").attr("placeholder", "请再次输入密码");
         $("#head_password_form").slideToggle();
+        $("input[name='submit']").hide(1000);
+        $('#head_img').attr("src", icon_src);
     });
     $("#head_name").click(function () {
         $("input[name='user_name']").val("");
         $("input[name='user_name']").attr("placeholder", "请更改用户名");
         $("#head_user_name_form").slideToggle();
         $("#head_modify_password").toggle();
+        $("#head_password_form").slideUp();
+        $("input[name='submit']").hide(1000);
+        $('#head_img').attr("src", icon_src);
     });
     $("#head_set").click(function () {
         $("#head_password_form").hide();
         $("#head_user_name_form").hide();
         $("input[name='submit']").hide();
+        $('#head_img').attr("src", icon_src);
         $("#head_modify_password").show();
+        $("input[name='file']").val(undefined);
     });
     $("#head_quit").click(function () {
        $.ajax({url:'/head/quit' , type:'post'});
@@ -98,7 +108,18 @@ $(document).ready(function () {
     });
     $("input[name='file']").change(function () {
         if($("input[name='file']").val()!=undefined){
-            $("input[name='submit']").show();
+            var file = this.files[0];
+            var url = null ;
+            if (window.createObjectURL!=undefined) { // basic
+                url = window.createObjectURL(file) ;
+            } else if (window.URL!=undefined) { // mozilla(firefox)
+                url = window.URL.createObjectURL(file) ;
+            } else if (window.webkitURL!=undefined) { // webkit or chrome
+                url = window.webkitURL.createObjectURL(file) ;
+            }
+            $('#head_img').attr("src", url);
+            $("input[name='submit']").slideDown();
         }
     });
 });
+
