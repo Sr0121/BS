@@ -23,8 +23,12 @@ var get_new_word = function () {
                 $('#quest_btn_3').attr("style", "cursor: pointer;");
                 $("#record_remain").text(data.done);
                 $("#record_learned").text(data.total);
-                $("#record_not_reviewed").text(data.review_total);
+                $("#record_reviewed_target").text(data.review_total);
                 $("#record_reviewed").text(data.review_done);
+            }
+            if(data.state === "FINAL"){
+                alert("恭喜你，已经完成了今天的任务！");
+                $(location).attr('href', './home');
             }
             current_word = data;
         }
@@ -36,7 +40,7 @@ var judge = function (index, data) {
         $("#quest_btn_" + index).attr("style", "cursor: pointer; color:green;");
         $("#record_remain").text(data.done);
         $("#record_learned").text(data.total);
-        $("#record_not_reviewed").text(data.review_total);
+        $("#record_reviewed_target").text(data.review_total);
         $("#record_reviewed").text(data.review_done);
     }
     else {

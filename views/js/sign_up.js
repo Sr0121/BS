@@ -7,11 +7,11 @@ $(document).ready(function () {
         $("input[name='email']").attr("placeholder", "请输入邮箱");
         $("input[name='email']").attr("class", "form-control input_border");
 
-        var id = $("input[name='id']").val()
-        var passwd = $("input[name='password']").val()
-        var email = $("input[name='email']").val()
-        var valid_id_pwd = /^[a-zA-Z0-9_]{6,16}$/
-        var valid_email = /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/
+        var id = $("input[name='id']").val();
+        var passwd = $("input[name='password']").val();
+        var email = $("input[name='email']").val();
+        var valid_id_pwd = /^[a-zA-Z0-9_]{6,16}$/;
+        var valid_email = /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/;
 
         var flag = 0;
         // alert("Value: " + len);
@@ -59,9 +59,6 @@ $(document).ready(function () {
 })
 
 $(document).ready(function () {
-    $('#b').click(function () {
-        $(location).attr('href', './sign_in');
-    });
     $('#d').click(function () {
         $(location).attr('href', './sign_in');
     });

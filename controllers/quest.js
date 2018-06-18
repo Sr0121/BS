@@ -42,6 +42,8 @@ var quest_dic = async (ctx, next) => {
 
     if (last_day < today) {
         //新的一天 分配题目
+        req = 'update ' + table_name + ' set islearn=0  where islearn>1';
+        row = await database.query(req);
         req = 'update ' + table_name + ' set islearn=1  where islearn=0 and date = 0 limit ' + real_target;
         row = await database.query(req);
         req = 'UPDATE user_table SET ' + ctx.request.body.type + '_review_learned = 0, ' + ctx.request.body.type + '_learned = 0 WHERE id= ' + id + ';';
@@ -49,7 +51,7 @@ var quest_dic = async (ctx, next) => {
     }
     else if (row.length === 0 && Number(learned) < Number(real_target)) {
         //用户当天更改练习内容 多分配一部分题目
-        req = 'select * from ' + table_name + ' where islearn=1';
+        req = 'select * from ' + table_name + ' where islearn>1';
         row = await database.query(req);
         var new_target = Number(real_target) - row.length - Number(learned);
         req = 'update ' + table_name + ' set islearn=1  where islearn=0 and date = 0 limit ' + new_target;
@@ -57,7 +59,7 @@ var quest_dic = async (ctx, next) => {
     }
     else if (row.length === 0 && Number(review_learned) < Number(real_review_target)) {
         //分配复习题目
-        req = 'select * from ' + table_name + ' where islearn=1';
+        req = 'select * from ' + table_name + ' where islearn>1';
         row = await database.query(req);
         var new_target = Number(real_review_target) - row.length - Number(review_learned);
         req = 'update ' + table_name + ' set islearn=1 where islearn = 0 and date > 0 order by rate limit ' + new_target;

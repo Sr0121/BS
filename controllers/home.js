@@ -12,6 +12,7 @@ var home_html = async (ctx, next) => {
 
 var home_info = async (ctx, next) => {
     var id = ctx.cookies.get('uid');
+    var today = new Date(new Date().toLocaleDateString()).getTime();
     var map = new Map();
     var database = require('./load_database.js')();
     var req = 'select * from user_table where id = ?';
@@ -51,6 +52,27 @@ var home_info = async (ctx, next) => {
         map['IELTS_review_target'] = row[0]['IELTS_review_target'];
         map['IELTS_review_learned'] = row[0]['IELTS_review_learned'];
         map['IELTS_left'] = row[0]['IELTS_left'];
+
+        if(row[0]['level_4_review_submission_date'] < today){
+            map['level_4_learned'] = 0;
+            map['level_4_review_learned'] = 0;
+            database.query("update user_table set level_4_learned = 0 , level_4_review_learned = 0 where id = ?", [id]);
+        }
+        if(row[0]['level_6_review_submission_date'] < today){
+            map['level_6_learned'] = 0;
+            map['level_6_review_learned'] = 0;
+            database.query("update user_table set level_6_learned = 0 , level_6_review_learned = 0 where id = ?", [id]);
+        }
+        if(row[0]['toefl_review_submission_date'] < today){
+            map['toefl_learned'] = 0;
+            map['toefl_review_learned'] = 0;
+            database.query("update user_table set toefl_learned = 0 , toefl_review_learned = 0 where id = ?", [id]);
+        }
+        if(row[0]['IELTS_review_submission_date'] < today){
+            map['IELTS_learned'] = 0;
+            map['IELTS_review_learned'] = 0;
+            database.query("update user_table set IELTS_learned = 0 , IELTS_review_learned = 0 where id = ?", [id]);
+        }
     }
     ctx.response.status = 200;
     ctx.response.type = 'application/json';

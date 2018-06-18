@@ -45,7 +45,10 @@ var sign_up_post = async (ctx, next) => {
     else {
         req = 'insert into verify_table values (?, ?, ?, ?, ?)';
         row = await database.query(req, [id, password, email, verify_code, date]);
-        var veri_html = '<a href=http://localhost:3000/sign_up/ve?index=' + verify_code + '>http://localhost:3000/sign_up/ve?index=' + verify_code + '</a>';
+        var verify_url = "http://localhost:3000/sign_up/ve?id="+id+"&index=" + verify_code;
+        var veri_html = '<h1>易背邮箱验证<h1><p><a href=http://localhost:3000/sign_up/ve?id='+id+'&index=' + verify_code + '>点击这里</a>完成验证</p>' +
+            '<p>如果不能跳转，请尝试将以下网址复制到浏览器中进入激活界面</p>' +
+            '<p>'+ verify_url +'</p>';
 
         sendEmail(email, '注册验证码', '', veri_html);
 
@@ -64,9 +67,10 @@ var sign_up_verify = async (ctx, next) => {
     var index = querystring.parse(arg).index;
     var req = 'select * from verify_table where verification_code = ?';
     var row = await database.query(req, [index]);
+    var timestamp = new Date().getTime() + 1000 * 10 * 60;
 
     if (row.length == 0) {
-        console.log('空');
+        console.log('verify code error');
     }
     else {
         console.log(row[0]['id']);
@@ -82,31 +86,29 @@ var sign_up_verify = async (ctx, next) => {
 
         req = 'create table ' + id + '_IELTS (id int(6), correct int(6), total int(6), rate float, date double, islearn int(6));';
         row = await database.query(req);
-        req = 'insert into ' + id + '_IELTS select * from ori_IELTS;'
+        req = 'insert into ' + id + '_IELTS select * from ori_IELTS;';
         row = await database.query(req);
 
         req = 'create table ' + id + '_level_4 (id int(6), correct int(6), total int(6), rate float, date double, islearn int(6));';
         row = await database.query(req);
-        req = 'insert into ' + id + '_level_4 select * from ori_level_4;'
+        req = 'insert into ' + id + '_level_4 select * from ori_level_4;';
         row = await database.query(req);
 
         req = 'create table ' + id + '_level_6 (id int(6), correct int(6), total int(6), rate float, date double, islearn int(6));';
         row = await database.query(req);
-        req = 'insert into ' + id + '_level_6 select * from ori_level_6;'
+        req = 'insert into ' + id + '_level_6 select * from ori_level_6;';
         row = await database.query(req);
 
         req = 'create table ' + id + '_toefl (id int(6), correct int(6), total int(6), rate float, date double, islearn int(6));';
         row = await database.query(req);
-        req = 'insert into ' + id + '_toefl select * from ori_toefl;'
+        req = 'insert into ' + id + '_toefl select * from ori_toefl;';
         row = await database.query(req);
 
         req = 'create table ' + id + '_user_dic( `Word` varchar(30) NOT NULL, `lx` longtext, PRIMARY KEY(Word));';
         row = await database.query(req);
 
-        //注册后无法直接进入主页面 并且无法登录
-        ctx.response.type = 'text/html';
-        ctx.response.status = 200;
-        ctx.response.body = fs.readFileSync(path.resolve(__dirname, '..') + '/views/sign_in.html');
+        ctx.cookies.set('uid', querystring.parse(arg).id, { expires: new Date(timestamp) });
+        ctx.response.redirect("/sign_welcome");
     }
 
     await next()
