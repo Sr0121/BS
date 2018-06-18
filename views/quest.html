@@ -12,25 +12,36 @@
 
 <body style="background-color: #f7f7f7">
     <div id="head"></div>
-    <br><br><br><br>
 
-    <div class="container">
+    <div class="container" style="position: relative; top: 10%">
         <div class="row">
             <div class="col-md-3">
             </div>
             <div class="col-md-6 text-center">
-                <div class="row">
-                    <div class="col-md-3">
-                        今日已学习：<span id="record_remain"></span>
+                <div class="card" align="center">
+                    <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-6">
+                                    已学习：<span id="record_remain"></span>
+                                </div>
+                                <div class="col-6">
+                                    学习目标：<span id="record_learned"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row">
+                                <div class="col-6">
+                                    已复习：<span id="record_reviewed"></span>
+                                </div>
+                                <div class="col-6">
+                                    复习目标：<span id="record_reviewed_target"></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-3">
-                        今日目标：<span id="record_learned"></span>
-                    </div>
-                    <div class="col-md-3">
-                        今日已复习：<span id="record_reviewed"></span>
-                    </div>
-                    <div class="col-md-3">
-                        复习目标：<span id="record_reviewed_target"></span>
                     </div>
                 </div>
                 <br>
