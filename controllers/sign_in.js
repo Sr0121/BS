@@ -24,11 +24,10 @@ var sign_in_post = async (ctx, next) => {
     }
     else {
         map['state'] = 'SUCCESS';
+        var timestamp = new Date().getTime() + 1000 * 10 * 60;
+        ctx.cookies.set('uid', row[0]['id'], { expires: new Date(timestamp) });
     }
 
-    var timestamp = new Date().getTime() + 1000 * 10 * 60;
-
-    ctx.cookies.set('uid', row[0]['id'], { expires: new Date(timestamp) });
 
     ctx.response.status = 200;
     ctx.response.type = 'application/json';

@@ -44,10 +44,13 @@ CREATE TABLE user_table (
     PRIMARY KEY (`id`)
 );
 
-CREATE TABLE ori_L4 (
+CREATE TABLE ori_level_4 (
     `id` int(6),
     `correct` int(6),
-    `total` int(6)
+    `total` int(6),
+    `rate` DOUBLE,
+    `date` DOUBLE,
+    `islearn` int(6)
 );
 
 CREATE TABLE user_dic(

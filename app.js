@@ -12,14 +12,13 @@ app.use(async (ctx, next) => {
     await next();
 });
 
-// app.use(cookieParser());
-
 // parse request body:
 app.use(bodyParser({uploadDir:__dirname + '/static'}));
 
 // add controllers:
 app.use(controller());
 
+// load static files
 app.use(require('koa-static')(__dirname + '/views'));
 app.use(require('koa-static')(__dirname + '/static'));
 
