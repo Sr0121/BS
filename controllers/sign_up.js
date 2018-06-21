@@ -45,8 +45,10 @@ var sign_up_post = async (ctx, next) => {
     else {
         req = 'insert into verify_table values (?, ?, ?, ?, ?)';
         row = await database.query(req, [id, password, email, verify_code, date]);
-        var verify_url = "http://localhost:3000/sign_up/ve?id="+id+"&index=" + verify_code;
-        var veri_html = '<h1>易背邮箱验证<h1><p><a href=http://localhost:3000/sign_up/ve?id='+id+'&index=' + verify_code + '>点击这里</a>完成验证</p>' +
+        var verify_url = ctx.request.url;
+        console.log(ctx.request.origin);
+        var verify_url = ctx.request.origin + "/sign_up/ve?id="+id+"&index=" + verify_code;
+        var veri_html = '<h1>易背邮箱验证<h1><p><a href='+verify_url+'>点击这里</a>完成验证</p>' +
             '<p>如果不能跳转，请尝试将以下网址复制到浏览器中进入激活界面</p>' +
             '<p>'+ verify_url +'</p>';
 

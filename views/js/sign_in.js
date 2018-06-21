@@ -1,6 +1,6 @@
 $(document).ready(function () {
     $('#b').click(function () {
-        $("input[name='id']").attr("placeholder", "请输入用户名");
+        $("input[name='id']").attr("placeholder", "请输入账号");
         $("input[name='id']").attr("class", "form-control input_border");
         $("input[name='password']").attr("placeholder", "请输入密码");
         $("input[name='password']").attr("class", "form-control input_border");
@@ -15,10 +15,10 @@ $(document).ready(function () {
             $("input[name='id']").val("");
             $("input[name='id']").attr("class", "form-control input_border change");
             if (id.length < 6) {
-                $("input[name='id']").attr("placeholder", "用户名不得小于6位");
+                $("input[name='id']").attr("placeholder", "账号不得小于6位");
             }
             else {
-                $("input[name='id']").attr("placeholder", "用户名只包含a-zA-Z0-9_");
+                $("input[name='id']").attr("placeholder", "账号只包含a-zA-Z0-9_");
             }
             flag = 1;
         }
@@ -26,7 +26,7 @@ $(document).ready(function () {
         if (passwd.length < 6) {
             $("input[name='password']").val("");
             $("input[name='password']").attr("class", "form-control input_border change");
-            $("input[name='password']").attr("placeholder", "用户名不得小于6位");
+            $("input[name='password']").attr("placeholder", "账号不得小于6位");
             flag = 1;
         }
         if (flag === 0) {
@@ -37,7 +37,7 @@ $(document).ready(function () {
                         $(location).attr('href', './home');
                     }
                     else {
-                        alert('用户名或密码错误');
+                        alert('账号或密码错误');
                     }
                 }
             });

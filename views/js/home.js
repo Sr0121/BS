@@ -115,7 +115,10 @@ $(document).ready(function(){
             }
             else{
                 $("#home_level_4_info").html("今日学习目标"+(data['level_4'])+"词");
-                if(data['level_4'] <= data['level_4_learned'] && data['level_4_review_target'] <= data['level_4_review_learned']){
+                if(data['level_4'] <= data['level_4_learned']
+                    && data['level_4_learned']>0
+                    && (data['level_4_review_target'] <= data['level_4_review_learned']
+                    || data['level_4_learned'] == data['level_4_total'] - data['level_4_left'])){
                     $("#home_btn_1").attr("disabled", "disabled");
                     $("#home_btn_1_text").text("完成");
                 }
@@ -126,7 +129,10 @@ $(document).ready(function(){
             }
             else{
                 $("#home_level_6_info").html("今日学习目标"+(data['level_6'])+"词");
-                if(data['level_6'] <= data['level_6_learned'] && data['level_6_review_target'] <= data['level_6_review_learned']){
+                if(data['level_6'] <= data['level_6_learned']
+                    && data['level_6_learned']>0
+                    && (data['level_6_review_target'] <= data['level_6_review_learned']
+                    || data['level_6_learned'] == data['level_6_total'] - data['level_6_left'])){
                     $("#home_btn_2").attr("disabled", "disabled");
                     $("#home_btn_2_text").text("完成");
                 }
@@ -137,7 +143,10 @@ $(document).ready(function(){
             }
             else{
                 $("#home_toefl_info").html("今日学习目标"+(data['toefl'])+"词");
-                if(data['toefl'] <= data['toefl_learned'] && data['toefl_review_target'] <= data['toefl_review_learned']){
+                if(data['toefl'] <= data['toefl_learned']
+                    && data['toefl_learned']>0
+                    && (data['toefl_review_target'] <= data['toefl_review_learned']
+                    || data['toefl_learned'] == data['toefl_total'] - data['toefl_left'])){
                     $("#home_btn_3").attr("disabled", "disabled");
                     $("#home_btn_3_text").text("完成");
                 }
@@ -148,7 +157,10 @@ $(document).ready(function(){
             }
             else{
                 $("#home_IELTS_info").html("今日学习目标"+(data['IELTS'])+"词");
-                if(data['IELTS'] <= data['IELTS_learned'] && data['IELTS_review_target'] <= data['IELTS_review_learned']){
+                if(data['IELTS'] <= data['IELTS_learned']
+                    && data['IELTS_learned']>0
+                    && (data['IELTS_review_target'] <= data['IELTS_review_learned']
+                    || data['IELTS_learned'] == data['IELTS_total'] - data['IELTS_left'])){
                     $("#home_btn_4").attr("disabled", "disabled");
                     $("#home_btn_4_text").text("完成");
                 }
