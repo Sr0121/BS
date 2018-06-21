@@ -3,15 +3,15 @@ var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport({
     service: '163',
     auth: {
-        user: '18867138461@163.com',
-        pass: 'bsproject123'
+        user: 'xxx@163.com',
+        pass: 'yyy'
     }
 });
 
 var sendMail = function (recipient, subject, plain, html) {
 
     var mailOptions = {
-        from: '18867138461@163.com',
+        from: 'xxx@163.com',
         to: recipient,
         subject: subject,
         text: plain,

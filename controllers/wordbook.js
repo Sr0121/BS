@@ -84,7 +84,7 @@ var word_list = async (ctx, next) => {
                 '</div> ' +
                 '<div class="row" style="display:none;" id="panel_word_' + row[i]['Word'] + '">' +
                 '<div class="col-md-3"> </div> <div class="col-md-6 text-center">' +
-                '<div >' +
+                '<div>' +
                 '<br> ' + row[i]['lx']  +
                 '</div> ' + '</div> ' +'<div class="col-md-3 ">'+ '<br> ' +
                 '<span id="word_set_'+ row[i]['Word'] +'" style = "cursor: pointer" class="word_set">' + '✎ ' +'</span>'+
@@ -94,6 +94,7 @@ var word_list = async (ctx, next) => {
                 '</td> ' +
                 '</tr>';
         }
+        text = text + '<tr> <td></td></tr>';
         map['state'] = 'SUCCESS';
         map['html'] = text;
     }

@@ -1,3 +1,7 @@
+create database wordtutor;
+
+use wordtutor;
+
 CREATE TABLE verify_table (
     `id` VARCHAR(16) NOT NULL,
     `password` VARCHAR(16) NOT NULL,
@@ -44,17 +48,11 @@ CREATE TABLE user_table (
     PRIMARY KEY (`id`)
 );
 
-CREATE TABLE ori_level_4 (
-    `id` int(6),
-    `correct` int(6),
-    `total` int(6),
-    `rate` DOUBLE,
-    `date` DOUBLE,
-    `islearn` int(6)
-);
-
 CREATE TABLE user_dic(
     `Word` varchar(30) NOT NULL,
     `lx` longtext,
     PRIMARY KEY(Word)
 );
+
+set global show_compatibility_56=on;
+set global max_connections = 800;
