@@ -1,2 +1,2 @@
 # BS
-A reciting word website using Node.js
+A reciting word web using Node.js
