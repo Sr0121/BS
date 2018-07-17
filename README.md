@@ -1,2 +1,2 @@
 # BS
-half done project for B/S system software design
+A reciting word website using Node.js
